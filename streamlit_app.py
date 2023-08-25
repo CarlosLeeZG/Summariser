@@ -67,8 +67,10 @@ def main():
 
         # Check if a file was uploaded
         if uploaded_file is not None:
+            file = io.BytesIO(uploaded_file.read())
+            
             # Read the contents of the file
-            loader = UnstructuredFileIOLoader(uploaded_file)
+            loader = UnstructuredFileIOLoader(file)
             documents = loader.load()
             llm = AzureChatOpenAI(temperature=0, 
                 verbose=True, 
