@@ -10,7 +10,7 @@ from typing import Dict, Any, List
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.docstore.document import Document
 import re
-
+import io
 
 
 class ProgressBarHandler(BaseCallbackHandler):
